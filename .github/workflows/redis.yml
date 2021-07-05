@@ -1,4 +1,4 @@
-name: 0.7.0
+name: redis
 
 on:
   push:
