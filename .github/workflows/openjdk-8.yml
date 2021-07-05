@@ -3,7 +3,7 @@ name: redis
 on:
   push:
     paths:
-      - "openjdk-8/Dockerfile"
+      - "openjdk-8/**"
       - ".github/workflows/openjdk-8.yml"
   workflow_dispatch:
 
