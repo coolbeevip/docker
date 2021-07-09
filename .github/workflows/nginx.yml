@@ -3,8 +3,7 @@ name: nginx
 on:
   push:
     paths:
-      - "nginx/Dockerfile"
-      - "nginx/nginx.conf"
+      - "nginx/**"
       - ".github/workflows/nginx.yml"
   workflow_dispatch:
 

@@ -58,6 +58,10 @@ RUN set -ex \
 FROM nginx:1.20.1-alpine
 COPY --from=builder /tmp/packages /tmp/packages
 COPY --from=builder /modules/nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /modules/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /modules/index.html /usr/share/nginx/html/index.html
+COPY --from=builder /modules/50x.html /usr/share/nginx/html/50x.html
+COPY --from=builder /modules/404.html /usr/share/nginx/html/404.html
 RUN set -ex \
     && . /tmp/packages/modules.env \
     && for module in $BUILT_MODULES; do \
