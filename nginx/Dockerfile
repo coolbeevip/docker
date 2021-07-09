@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine as builder
 
 # https://hg.nginx.org/pkg-oss/file/tip/alpine
-ARG ENABLED_MODULES="ndk"
+ARG ENABLED_MODULES="ndk lua subs-filter headers-more"
 
 #RUN set -ex \
 #    && if [ "$ENABLED_MODULES" = "" ]; then \
