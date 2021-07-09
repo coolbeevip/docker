@@ -1,6 +1,7 @@
 FROM nginx:stable-alpine as builder
 
-ARG ENABLED_MODULES="module-headers-more"
+# https://hg.nginx.org/pkg-oss/file/tip/alpine
+ARG ENABLED_MODULES="ndk"
 
 #RUN set -ex \
 #    && if [ "$ENABLED_MODULES" = "" ]; then \
