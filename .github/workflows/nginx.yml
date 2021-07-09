@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "nginx/Dockerfile"
+      - "nginx/nginx.conf"
       - ".github/workflows/nginx.yml"
   workflow_dispatch:
 
