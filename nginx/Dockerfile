@@ -57,6 +57,7 @@ RUN set -ex \
 
 FROM nginx:1.20.1-alpine
 COPY --from=builder /tmp/packages /tmp/packages
+COPY --from=builder /modules/nginx.conf /etc/nginx/nginx.conf
 RUN set -ex \
     && . /tmp/packages/modules.env \
     && for module in $BUILT_MODULES; do \
