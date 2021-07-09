@@ -1,12 +1,12 @@
 FROM nginx:stable-alpine as builder
 
-ARG ENABLED_MODULES
+ARG ENABLED_MODULES="module-headers-more"
 
-RUN set -ex \
-    && if [ "$ENABLED_MODULES" = "" ]; then \
-        echo "No additional modules enabled, exiting"; \
-        exit 1; \
-    fi
+#RUN set -ex \
+#    && if [ "$ENABLED_MODULES" = "" ]; then \
+#        echo "No additional modules enabled, exiting"; \
+#        exit 1; \
+#    fi
 
 COPY ./ /modules/
 
