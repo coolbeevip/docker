@@ -1,13 +1,7 @@
-FROM nginx:stable-alpine as builder
+FROM nginx:1.20.1-alpine as builder
 
 # https://hg.nginx.org/pkg-oss/file/tip/alpine
-ARG ENABLED_MODULES="ndk lua subs-filter headers-more"
-
-#RUN set -ex \
-#    && if [ "$ENABLED_MODULES" = "" ]; then \
-#        echo "No additional modules enabled, exiting"; \
-#        exit 1; \
-#    fi
+ARG ENABLED_MODULES="ndk njs lua set-misc opentracing subs-filter headers-more"
 
 COPY ./ /modules/
 
@@ -61,7 +55,7 @@ RUN set -ex \
     done \
     && echo "BUILT_MODULES=\"$BUILT_MODULES\"" > /tmp/packages/modules.env
 
-FROM nginx:stable-alpine
+FROM nginx:1.20.1-alpine
 COPY --from=builder /tmp/packages /tmp/packages
 RUN set -ex \
     && . /tmp/packages/modules.env \
