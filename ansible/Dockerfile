@@ -12,7 +12,7 @@ ENV LANG='en_US.UTF-8' \
 
 RUN set -x && \
     apk update && \
-    apk add --no-cache bash tzdata openssh su-exec unzip libc6-compat libzmq ttf-dejavu curl shadow sshpass ansible && \
+    apk add --no-cache bash tzdata openssh su-exec unzip libc6-compat libzmq ttf-dejavu curl shadow sshpass rsync ansible && \
     cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY docker-entrypoint.sh /usr/local/bin/
