@@ -49,6 +49,7 @@
 * curl
 * shadow
 * glibc
+* procps
 * jattach
 
 ## Integration Skywalking Agent 8.1.0
