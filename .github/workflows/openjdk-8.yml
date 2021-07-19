@@ -1,4 +1,4 @@
-name: redis
+name: openjdk-8
 
 on:
   push:
