@@ -67,3 +67,12 @@ environment variable
 * SW_AGENT_NAME  
 
   Your application name. e.g. `my-service`
+
+
+## Tools
+
+Show top N threads CPU usage in a process
+
+```shell
+ps -mp <PID> -o THREAD,tid,time | sort -rn | awk '{printf "%s \t %x\n", $2,$8}' | head -10
+```    
