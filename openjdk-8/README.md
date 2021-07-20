@@ -73,5 +73,5 @@ environment variable
 Show top N threads CPU usage in a process
 
 ```shell
-ps -mp <PID> -o THREAD,tid,time | sort -rn | awk '{printf "%s \t %x\n", $2,$8}' | head -10
+ps -mp 1 -o THREAD,tid,time | sort -rn | awk '{printf "%s\t%s\t 0x%x\n", $2,$5,$8}' | head -10
 ```  
