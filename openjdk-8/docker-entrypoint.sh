@@ -25,4 +25,7 @@ if [ $SW_AGENT_ENABLED ]; then
 
 fi
 
+ulimit -n 65536
+ulimit -s 819200
+
 exec "$@"

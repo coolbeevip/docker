@@ -13,7 +13,7 @@
 
 * -Xms256m
 * -Xmx1g
-* -Xss256k
+* -Xss1024k
 * -XX:MetaspaceSize=128m
 * -XX:MaxMetaspaceSize=512m
 

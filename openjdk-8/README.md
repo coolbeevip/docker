@@ -8,12 +8,14 @@
 
 * en_US.UTF-8
 * Asia/Shanghai
+* ulimit -n 65536
+* ulimit -s 819200
 
 ## DEFAULT JVM
 
 * -Xms256m
 * -Xmx1g
-* -Xss256k
+* -Xss1024k
 * -XX:MetaspaceSize=128m
 * -XX:MaxMetaspaceSize=512m
 
