@@ -8,6 +8,8 @@
 
 * en_US.UTF-8
 * Asia/Shanghai
+* ulimit -n 65536
+* ulimit -s 819200
 
 ## DEFAULT JVM
 
