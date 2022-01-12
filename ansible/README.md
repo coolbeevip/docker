@@ -60,6 +60,17 @@ ANSIBLE_SSH_PASSS=pass1,pass2
 ANSIBLE_SU_PASSS=supass1,supass2
 ```
 
+**注意：** 如果您的参数值中包含逗号，那么您可以使用 ANSIBLE_PARAM_SPLIT 参数自定义分隔符，例如
+
+```
+ANSIBLE_PARAM_SPLIT=;
+ANSIBLE_SSH_HOSTS=192.168.0.1;192.168.0.2
+ANSIBLE_SSH_PORTS=22;22
+ANSIBLE_SSH_USERS=user1;user2
+ANSIBLE_SSH_PASSS=pass1;pass2
+ANSIBLE_SU_PASSS=supass1;supass2
+```
+
 ### 在外部卷中定义配置
 
 你可以在容器外部定义 `hosts` 和 `ansible.cfg` 文件，并使用卷映射到容器内部

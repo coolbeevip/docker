@@ -35,7 +35,7 @@ jobs:
           context: ./ansible
           file: ./ansible/Dockerfile
           push: true
-          tags: coolbeevip/ansible:2.8.11-alpine
+          tags: coolbeevip/ansible:2.8.11-20220212-alpine
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest

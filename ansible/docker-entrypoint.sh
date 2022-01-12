@@ -22,17 +22,23 @@ init_ansible_cfg() {
 }
 
 init_ansible_hosts() {
+  PARAM_SPLIT=', '
+  if [ "$ANSIBLE_PARAM_SPLIT" != "" ]; then
+    PARAM_SPLIT=$ANSIBLE_PARAM_SPLIT
+  fi
+  echo "param split $PARAM_SPLIT"
+
   if [ ! -d "/etc/ansible/hosts" ]; then
     if [ "$ANSIBLE_SSH_HOSTS" != "" ]; then
       echo "Create /etc/ansible/hosts"
 
       echo "[default]" > /etc/ansible/hosts
 
-      IFS=', ' read -r -a ANSIBLE_SSH_HOSTS_ARRAY <<< $ANSIBLE_SSH_HOSTS
-      IFS=', ' read -r -a ANSIBLE_SSH_PORTS_ARRAY <<< $ANSIBLE_SSH_PORTS
-      IFS=', ' read -r -a ANSIBLE_SSH_USER_ARRAY <<< $ANSIBLE_SSH_USERS
-      IFS=', ' read -r -a ANSIBLE_SSH_PASS_ARRAY <<< $ANSIBLE_SSH_PASSS
-      IFS=', ' read -r -a ANSIBLE_SU_PASS_ARRAY <<< $ANSIBLE_SU_PASSS
+      IFS=$PARAM_SPLIT read -r -a ANSIBLE_SSH_HOSTS_ARRAY <<< $ANSIBLE_SSH_HOSTS
+      IFS=$PARAM_SPLIT read -r -a ANSIBLE_SSH_PORTS_ARRAY <<< $ANSIBLE_SSH_PORTS
+      IFS=$PARAM_SPLIT read -r -a ANSIBLE_SSH_USER_ARRAY <<< $ANSIBLE_SSH_USERS
+      IFS=$PARAM_SPLIT read -r -a ANSIBLE_SSH_PASS_ARRAY <<< $ANSIBLE_SSH_PASSS
+      IFS=$PARAM_SPLIT read -r -a ANSIBLE_SU_PASS_ARRAY <<< $ANSIBLE_SU_PASSS
 
       for index in "${!ANSIBLE_SSH_HOSTS_ARRAY[@]}"
       do
