@@ -38,7 +38,7 @@ docker run --name ansible --rm -it \
   -e ANSIBLE_SSH_USERS=coolbeevip \
   -e ANSIBLE_SSH_PASSS=coolbeevip \
   -e ANSIBLE_SU_PASSS=123456 \
-  coolbeevip/ansible \
+  coolbeevip/ansible:2.8.11-20220212-alpine \
   /bin/bash
 ```
 
@@ -78,7 +78,7 @@ ANSIBLE_SU_PASSS=supass1;supass2
 ```
 docker run --name ansible --rm -it \
   -v ./volume/ansible:/etc/ansible \
-  coolbeevip/ansible \
+  coolbeevip/ansible:2.8.11-20220212-alpine \
   /bin/bash
 ```
 
