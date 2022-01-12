@@ -38,7 +38,7 @@ docker run --name ansible --rm -it \
   -e ANSIBLE_SSH_USERS=coolbeevip \
   -e ANSIBLE_SSH_PASSS=coolbeevip \
   -e ANSIBLE_SU_PASSS=123456 \
-  coolbeevip/ansible:1.0_2.8.11-alpine \
+  coolbeevip/ansible:latest \
   /bin/bash
 ```
 
@@ -71,7 +71,7 @@ ANSIBLE_SSH_PASSS=pass1#pass2
 ANSIBLE_SU_PASSS=supass1#supass2
 ```
 
-**注意：** 如果您的参数值中包含逗号，那么您可以使用 ANSIBLE_PARAM_SPLIT 参数自定义分隔符，例如
+**注意：** 如果您的参数值中包含 shell 的保留字，那么你的参数值要用双引号扩起来，例如
 
 ```
 ANSIBLE_PARAM_SPLIT=";"
@@ -89,7 +89,7 @@ ANSIBLE_SU_PASSS="supass1;supass2"
 ```
 docker run --name ansible --rm -it \
   -v ./volume/ansible:/etc/ansible \
-  coolbeevip/ansible:1.0_2.8.11-alpine \
+  coolbeevip/ansible:latest \
   /bin/bash
 ```
 
