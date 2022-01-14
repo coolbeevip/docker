@@ -15,7 +15,6 @@ init_ansible_cfg() {
     echo "Create /etc/ansible/ansible.cfg"
     echo "[defaults]" > /etc/ansible/ansible.cfg
     echo "host_key_checking=false" >> /etc/ansible/ansible.cfg
-    echo "command_warnings=false" >> /etc/ansible/ansible.cfg
   else
     echo "Load /etc/ansible/ansible.cfg"
   fi
