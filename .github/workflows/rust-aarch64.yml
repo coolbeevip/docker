@@ -3,8 +3,8 @@ name: redis
 on:
   push:
     paths:
-      - "rust-armv8/Dockerfile"
-      - ".github/workflows/rust-armv8.yml"
+      - "rust-aarch64/Dockerfile"
+      - ".github/workflows/rust-aarch64.yml"
   workflow_dispatch:
 
 jobs:
@@ -32,10 +32,10 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./rust/rust-armv8
-          file: ./rust/rust-armv8/Dockerfile
+          context: ./rust/rust-aarch64
+          file: ./rust/rust-aarch64/Dockerfile
           push: true
-          tags: coolbeevip/rust-armv8
+          tags: coolbeevip/rust-aarch64
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
