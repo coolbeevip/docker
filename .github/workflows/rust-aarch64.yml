@@ -35,7 +35,7 @@ jobs:
           context: ./rust/rust-aarch64
           file: ./rust/rust-aarch64/Dockerfile
           push: true
-          tags: coolbeevip/rust-aarch64
+          tags: coolbeevip/rust-cross-builder:aarch64
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest

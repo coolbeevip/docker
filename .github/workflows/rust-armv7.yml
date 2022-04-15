@@ -35,7 +35,7 @@ jobs:
           context: ./rust/rust-armv7
           file: ./rust/rust-armv7/Dockerfile
           push: true
-          tags: coolbeevip/rust-armv7
+          tags: coolbeevip/rust-cross-builder:armv7
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest

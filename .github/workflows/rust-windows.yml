@@ -35,7 +35,7 @@ jobs:
           context: ./rust/rust-windows
           file: ./rust/rust-windows/Dockerfile
           push: true
-          tags: coolbeevip/rust-windows
+          tags: coolbeevip/rust-cross-builder:windows
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
