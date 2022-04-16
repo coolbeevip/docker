@@ -1,6 +1,6 @@
 FROM centos:centos7
 
 RUN curl -O https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh
-RUN sh rustup-init.sh -y
+RUN sh rustup-init.sh -y && source $HOME/.cargo/env
 RUN rustup default nightly
 RUN yum -y install gcc
