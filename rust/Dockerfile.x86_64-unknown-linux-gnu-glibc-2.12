@@ -1,0 +1,9 @@
+# ldd (GNU libc) 2.12
+
+FROM centos:centos6
+
+RUN curl -O https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh \
+  && yum -y install gcc \
+  && sh rustup-init.sh -y \
+  && source $HOME/.cargo/env \
+  && rustup default nightly
