@@ -1,4 +1,4 @@
-name: redis
+name: rust-x86_64-unknown-linux-gnu-glibc-2.17
 
 on:
   push:
