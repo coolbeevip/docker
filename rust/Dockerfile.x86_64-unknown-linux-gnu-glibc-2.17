@@ -10,6 +10,6 @@ RUN curl -O https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-ini
   && source $HOME/.cargo/env \
   && rustup default nightly
 
-ENV PATH="$HOME/.cargo/bin:$PATH"
+COPY release.sh .
 
-CMD ["cargo", "build", "--release"]
+CMD ["sh", "release.sh"]
