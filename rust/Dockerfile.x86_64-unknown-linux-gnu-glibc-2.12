@@ -7,3 +7,7 @@ RUN curl -O https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-ini
   && sh rustup-init.sh -y \
   && source $HOME/.cargo/env \
   && rustup default nightly
+
+  ENV PATH="$HOME/.cargo/bin:$PATH"
+
+  CMD ["cargo", "build", "--release"]
