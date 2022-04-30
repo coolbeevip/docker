@@ -9,5 +9,3 @@ RUN curl -O https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-ini
   && sh rustup-init.sh -y \
   && source $HOME/.cargo/env \
   && rustup default nightly
-
-CMD ["source","$HOME/.cargo/env", "&&", "cargo", "build", "--release"]
