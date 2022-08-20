@@ -1,8 +1,6 @@
 FROM openjdk:8-slim
 MAINTAINER coolbeevip(coolbeevip@gmail.com)
 
-ENV DEBIAN_FRONTEND noninteractive
-
 ARG HADOOP_VERSION=2.7.7
 
 # Refresh package lists
@@ -21,8 +19,8 @@ RUN mv hadoop-$HADOOP_VERSION hadoop
 # Setup
 WORKDIR /opt/hadoop
 ENV PATH /opt/hadoop/bin:/opt/hadoop/sbin:$PATH
-# ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-# RUN sed --in-place='.ori' -e "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-openjdk-amd64/" etc/hadoop/hadoop-env.sh
+ENV JAVA_HOME /usr/local/openjdk-8
+RUN sed --in-place='.ori' -e "s/\${JAVA_HOME}/\/usr\/local\/openjdk-8\/" etc/hadoop/hadoop-env.sh
 
 # Configure ssh client
 RUN ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa && \
