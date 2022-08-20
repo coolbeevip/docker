@@ -20,7 +20,7 @@ RUN mv hadoop-$HADOOP_VERSION hadoop
 WORKDIR /opt/hadoop
 ENV PATH /opt/hadoop/bin:/opt/hadoop/sbin:$PATH
 ENV JAVA_HOME /usr/local/openjdk-8
-RUN sed --in-place='.ori' -e "s/\${JAVA_HOME}/\/usr\/local\/openjdk-8\/" etc/hadoop/hadoop-env.sh
+RUN sed --in-place='.ori' -e "s/\${JAVA_HOME}/\/usr\/local\/openjdk-8/" etc/hadoop/hadoop-env.sh
 
 # Configure ssh client
 RUN ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa && \
