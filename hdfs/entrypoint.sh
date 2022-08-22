@@ -26,9 +26,6 @@ start-dfs.sh
 hadoop-daemon.sh start portmap
 hadoop-daemon.sh start nfs3
 
-echo "Create /HDFS_ROOT "
-hdfs dfs -mkdir /HDFS_ROOT
-
 if [[ $1 == "-bash" ]]; then
   /bin/bash
 fi
