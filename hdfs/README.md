@@ -2,15 +2,6 @@
 
 Docker image for single HDFS node.
 
-**Only for development purpose.**
-
-License: **MIT**
-
-## Local build
-```sh
-$ docker build -t coolbeevip/hdfs .
-```
-
 ## Running HDFS container
 
 ```sh
@@ -34,14 +25,3 @@ $ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:500
   - HDFS datanode (http) -> `50075`
   - HDFS secondary namenode -> `50090`
   - SSH -> `22`
-
-
-## Contributing
-
-All PRs are welcome.
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
