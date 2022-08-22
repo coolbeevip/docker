@@ -1,7 +1,7 @@
 FROM openjdk:8-slim
 MAINTAINER coolbeevip(coolbeevip@gmail.com)
 
-ARG HADOOP_VERSION=2.7.7
+ARG HADOOP_VERSION=2.8.5
 
 # Refresh package lists
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
