@@ -39,7 +39,6 @@ RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/s
 COPY etc/hadoop/core-site.xml etc/hadoop/core-site.xml
 COPY etc/hadoop/hdfs-site.xml etc/hadoop/hdfs-site.xml
 RUN hdfs namenode -format
-RUN hdfs dfs -mkdir /DATA
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 700 /entrypoint.sh

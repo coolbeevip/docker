@@ -25,6 +25,7 @@ until nc -vzw 2 $host ${ssh_port}; do sleep 2; done
 start-dfs.sh
 hadoop-daemon.sh start portmap
 hadoop-daemon.sh start nfs3
+hdfs dfs -mkdir /DATA
 
 if [[ $1 == "-bash" ]]; then
   /bin/bash
