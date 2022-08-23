@@ -38,7 +38,7 @@ hadoop-daemon.sh start portmap
 echo "Starting HADOOP NFS3"
 hadoop-daemon.sh start nfs3
 
-echo "CRATE DFS /DATA"
+echo "CREATE DFS /DATA"
 hdfs dfs -mkdir /DATA
 
 if [[ $1 == "-bash" ]]; then
