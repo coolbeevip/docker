@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - "hdfs/Dockerfile"
+      - "hdfs/entrypoint.sh"
+      - "hdfs/etc/hadoop/core-site.xml"
+      - "hdfs/etc/hadoop/hdfs-site.xml"
       - ".github/workflows/hdfs.yml"
   workflow_dispatch:
   
