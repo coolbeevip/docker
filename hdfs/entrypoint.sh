@@ -25,12 +25,20 @@ init_config() {
 echo "Starting HDFS on ${host}:${port}"
 init_config
 
+echo "Starting SSH on ${host}:${ssh_port}"
 service ssh start
 until nc -vzw 2 $host ${ssh_port}; do sleep 2; done
 
+echo "Starting DFS"
 start-dfs.sh
+
+echo "Starting HADOOP PORT MAP"
 hadoop-daemon.sh start portmap
+
+echo "Starting HADOOP NFS3"
 hadoop-daemon.sh start nfs3
+
+echo "CRATE DFS /DATA"
 hdfs dfs -mkdir /DATA
 
 if [[ $1 == "-bash" ]]; then
