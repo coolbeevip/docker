@@ -15,6 +15,16 @@
     </property>
 
     <property>
+        <name>dfs.client.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
+
+    <property>
         <name>dfs.secondary.http.address</name>
         <value>0.0.0.0:50090</value>
         <description>
