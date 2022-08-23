@@ -48,3 +48,5 @@ fi
 if [[ $1 == "-d" ]]; then
   tail -f /dev/null /opt/hadoop/logs/*
 fi
+
+echo "HDFS STARTED!"
