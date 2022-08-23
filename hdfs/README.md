@@ -6,13 +6,13 @@ Docker image for single HDFS node.
 
 ```sh
 # Running and get a Bash interpreter
-$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -it --rm coolbeevip/hdfs:2.7.7
+$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -it --rm coolbeevip/hdfs:2.8.5
 
 # With NFS
-$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -p 111:111 -p 2049:2049 -it --rm coolbeevip/hdfs:2.7.7
+$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -p 111:111 -p 2049:2049 -it --rm coolbeevip/hdfs:2.8.5
 
 # Running as daemon
-$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -d --rm coolbeevip/hdfs:2.7.7
+$ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -d --rm coolbeevip/hdfs:2.8.5
 ```
 
 ## Environment
