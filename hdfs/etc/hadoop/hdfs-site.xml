@@ -16,12 +16,12 @@
 
     <property>
         <name>dfs.client.use.datanode.hostname</name>
-        <value>true</value>
+        <value>DFS_CLIENT_USE_DATANODE_HOSTNAME</value>
     </property>
 
     <property>
         <name>dfs.datanode.use.datanode.hostname</name>
-        <value>true</value>
+        <value>DFS_DATANODE_USE_DATANODE_HOSTNAME</value>
     </property>
 
     <property>

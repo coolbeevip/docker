@@ -15,7 +15,15 @@ $ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:500
 $ docker run -p 22022:22 -p 8020:8020 -p 50010:50010 -p 50020:50020 -p 50070:50070 -p 50075:50075 -d --rm coolbeevip/hdfs:2.7.7
 ```
 
-- Ports
+## Environment
+
+  - HDFS_HOST -> localhost
+  - HDFS_PORT -> 8020
+  - DFS_CLIENT_USE_DATANODE_HOSTNAME -> false
+  - DFS_DATANODE_USE_DATANODE_HOSTNAME -> false
+
+## Ports
+
   - Portmap -> `111`
   - NFS -> `2049`
   - HDFS namenode -> `8020` (hdfs://localhost:8020)
