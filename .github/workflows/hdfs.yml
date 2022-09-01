@@ -38,6 +38,7 @@ jobs:
           context: ./hdfs
           file: ./hdfs/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: coolbeevip/hdfs:2.8.5
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache

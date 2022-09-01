@@ -35,6 +35,7 @@ jobs:
           context: ./ansible
           file: ./ansible/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: coolbeevip/ansible:1.0_4.8.0-alpine,coolbeevip/ansible:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
