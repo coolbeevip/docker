@@ -35,7 +35,7 @@ jobs:
           context: ./mysql
           file: ./mysql/Dockerfile
           push: true
-          tags: coolbeevip/mysql:8.0.25
+          tags: coolbeevip/mysql:8.0.29
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
