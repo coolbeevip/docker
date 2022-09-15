@@ -1,4 +1,4 @@
 
 ```
-docker run --rm -it --add-host=jacorb.server:10.1.75.114 coolbeevip/jacorb-name-server:3.9
+docker run --rm -it -p 12000:12000 coolbeevip/jacorb-name-server:3.9
 ```
