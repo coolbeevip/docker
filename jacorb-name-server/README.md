@@ -1,34 +1,42 @@
 
-本机使用
+## 部署在本机
+
+容器在本机启动
 
 ```
-docker run --rm -it \
+docker run \
+--rm \
 --name=jacorb-name-server \
+-it
 -p 12000:12000 \
 coolbeevip/jacorb-name-server:3.9
 ```
 
-## 使用域名解析
+## 部署在其他宿主机
 
-客户端需要在 /etc/hosts 中配置 jacorb.server 指向本镜像的可访问地址
+容器在 10.19.88.60 服务器启动
 
 ```
-docker run --rm -it \
+docker run \
+--rm \
+--name=jacorb-name-server \
+-it \
 -p 12000:12000 \
--e JACORB_IOR_PROXY_HOST=jacorb.server \
+-e JACORB_IOR_PROXY_HOST=10.19.88.60 \
 coolbeevip/jacorb-name-server:3.9
 ```
 
-## 使用域名解析 & 端口映射
+## 部署在其他宿主机并且端口映射
 
-客户端需要在 /etc/hosts 中配置 jacorb.server 指向本镜像的可访问地址
-客户端通过 22000 访问容器对外映射的 22000 端口
+容器在 10.19.88.60 服务器启动，并且将 12000 映射成 22000 端口
 
 ```
-docker run --rm -it \
+docker run \
+--rm \
+--name=jacorb-name-server \
+-it \
 -p 22000:12000 \
--e JACORB_DNS_ENABLE=on \
--e JACORB_IOR_PROXY_HOST=jacorb.server \
+-e JACORB_IOR_PROXY_HOST=10.19.88.60 \
 -e JACORB_IOR_PROXY_PORT=22000 \
 coolbeevip/jacorb-name-server:3.9
 ```
