@@ -5,6 +5,7 @@ MAINTAINER zhanglei@apache.org
 WORKDIR /jar-guard
 
 COPY release/jar-guard-tool-server ./
+COPY release/Rocket.toml ./
 COPY release/static ./static
 
 RUN chmod +x ./jar-guard-tool-server
