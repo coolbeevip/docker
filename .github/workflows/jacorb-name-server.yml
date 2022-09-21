@@ -38,7 +38,7 @@ jobs:
           file: ./jacorb-name-server/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/jacorb-name-server:3.9
+          tags: coolbeevip/jacorb-name-server:3.9,coolbeevip/jacorb-name-server:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
