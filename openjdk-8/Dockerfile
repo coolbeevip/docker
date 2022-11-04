@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM alpine:3.16
 
 MAINTAINER zhanglei@apache.org
 
@@ -23,7 +23,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN set -x && \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk update && \
-    apk add --no-cache bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps && \
+    apk add --no-cache openjdk8 bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps && \
 	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget -t 0 -c -T 36000 https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk && \
