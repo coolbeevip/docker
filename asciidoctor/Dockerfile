@@ -2,8 +2,8 @@ FROM asciidoctor/docker-asciidoctor:1.37
 
 MAINTAINER coolbeevip(coolbeevip@gmail.com)
 
-RUN gem install asciidoctor-pdf-cjk-kai_gen_gothic
-RUN asciidoctor-pdf-cjk-kai_gen_gothic-install
+RUN mkdir -p /opt/fonts
+COPY fonts/*.ttf /opt/fonts
 
 WORKDIR /documents
 VOLUME /documents
