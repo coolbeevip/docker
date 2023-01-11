@@ -2,8 +2,9 @@ FROM asciidoctor/docker-asciidoctor:1.37
 
 MAINTAINER coolbeevip(coolbeevip@gmail.com)
 
-RUN mkdir -p /opt/cjk
 COPY cjk /opt/cjk
+
+RUN apk add --no-cache pandoc
 
 WORKDIR /documents
 VOLUME /documents
