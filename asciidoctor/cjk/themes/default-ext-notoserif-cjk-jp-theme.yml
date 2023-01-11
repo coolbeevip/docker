@@ -1,0 +1,14 @@
+# FOR Asciidoctor-PDF 2.x
+extends: default-with-font-fallbacks
+font:
+  catalog:
+    merge: true
+    Noto Serif CJK JP:
+      normal: notoserif-cjk-jp-normal.ttf
+      bold: notoserif-cjk-jp-bold.ttf
+      italic: notoserif-cjk-jp-italic.ttf
+      bold_italic: notoserif-cjk-jp-bold_italic.ttf
+  fallbacks: [M+ 1p Fallback, Noto Emoji, Noto Serif CJK JP]      
+base_font_family: Noto Serif CJK JP
+base_align: left
+
