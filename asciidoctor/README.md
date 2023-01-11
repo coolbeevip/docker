@@ -4,7 +4,7 @@ including SC TC KR JP font.
 
 ```shell
 docker run -it --rm \
--v src/docs/asciidoc:/documents/ \
+-v /my-documents:/documents/ \
 coolbeevip/asciidoctor
 ```
 
@@ -45,5 +45,8 @@ asciidoctor-epub3 Main.adoc
 DocBook to MS Word [more](https://rmoff.net/2020/04/16/converting-from-asciidoc-to-google-docs-and-ms-word/)
 
 ```shell
-pandoc --from docbook --to docx --output Main.docx Main.xml
+pandoc --from docbook --to docx \
+--output Main.docx \
+--highlight-style espresso \
+Main.xml
 ```
