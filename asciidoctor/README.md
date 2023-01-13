@@ -1,6 +1,6 @@
 # Asciidoctor docker container 
 
-including SC TC KR JP font.
+Including SC TC KR JP font & Pandoc
 
 ```shell
 docker run -it --rm \
