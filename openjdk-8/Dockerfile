@@ -17,14 +17,11 @@ RUN set -x && \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk update && \
     apk add --no-cache openjdk8 bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps && \
-	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-RUN wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
+	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget -t 0 -c -T 36000 https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk && \
-    apk add glibc-2.29-r0.apk
-
-
-RUN rm -rf /var/cache/apk/* && \
+    apk add --force-overwrite glibc-2.29-r0.apk && \
+    rm -rf /var/cache/apk/* && \
     rm /etc/apk/keys/sgerrand.rsa.pub && \
     rm glibc-2.29-r0.apk && \
     mkdir -p /var/log/nc
