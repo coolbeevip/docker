@@ -53,6 +53,7 @@
 * glibc 2.35
 * procps
 * jattach
+* lftp
 
 ## Tools
 
