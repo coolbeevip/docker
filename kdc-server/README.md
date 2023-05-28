@@ -10,8 +10,8 @@ docker run --name kdc-server --rm -it -p 4000:88 -v $(pwd)/kerby-data:/kerby-dat
 
 ## Creates a principal
 
-使用 `docker exec -it \<id\> bash` 命令进入容器，执行 `bin/kadmin.sh /kerby-data/conf/ -k /kerby-data/keytabs/admin.keytab` 命令
-进入管理界面，输入 `addprinc -pw password coolbeevip@EXAMPLE.COM` 命令增加一个用户
+进入容器后执行 `bin/kadmin.sh /kerby-data/conf/ -k /kerby-data/keytabs/admin.keytab` 进入管理界面，
+输入 `addprinc -pw password coolbeevip@EXAMPLE.COM` 命令增加一个 principal，使用 `ktadd -k /kerby-data/keytabs/coolbeevip.keytab -norandkey coolbeevip` 生成对应 keytab
 
 ```shell
 $ bin/kadmin.sh /kerby-data/conf/ -k /kerby-data/keytabs/admin.keytab
@@ -29,7 +29,7 @@ Export Keytab to /kerby-data/keytabs/coolbeevip.keytab
 
 ## Test principal
 
-这将为 coolbeevip 获得一个 ticket
+使用 `kinit` 命令我为 coolbeevip 生成一个 ticket
 
 ```shell
 $ export KRB5_CONFIG=/kerby-data/conf/krb5.conf

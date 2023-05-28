@@ -18,16 +18,17 @@ MAINTAINER zhanglei@apache.org
 
 COPY --from=builder /usr/local/kerby /usr/local/kerby
 COPY /kerby-data /tmp/kerby-data
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY docker-entrypoint.sh /
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y \
   && apt-get -y install krb5-user \
   && chmod +x /usr/local/kerby/bin/*.sh \
   && mkdir -p /usr/local/kerby/runtime \
-  && apt-get clean
+  && apt-get clean \
+  && chmod +x /docker-entrypoint.sh
 
 WORKDIR /usr/local/kerby
 EXPOSE 88
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["bin/start-kdc.sh", "/kdc/kerby-data/conf", "runtime"]
