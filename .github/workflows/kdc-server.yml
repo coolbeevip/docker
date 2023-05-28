@@ -3,7 +3,7 @@ name: kdc-server
 on:
   push:
     paths:
-      - "nginx/**"
+      - "kdc-server/**"
       - ".github/workflows/kdc-server.yml"
   workflow_dispatch:
 
