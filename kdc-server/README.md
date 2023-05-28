@@ -2,10 +2,14 @@
 
 ## Run
 
-> 把这个资源库中的 kerby-data 目录映射到容器中的 /kerby-data 卷。这个目录存储了 Kerby 的配置文件，以及管理员 keytab，和存储 principals 的 JSON 文件。
+```shell
+docker run --name kdc-server --rm -it -p 4000:88 coolbeevip/kdc-server:2.0.3
+```
+
+> 容器内 /kdc/kerby-data 目录存储了 Kerby 的配置文件，以及管理员 keytab，和存储 principals 的 JSON 文件
 
 ```shell
-docker run --name kdc-server --rm -it -p 4000:88 -v $(pwd)/kerby-data:/kerby-data coolbeevip/kdc-server:2.0.3
+docker run --name kdc-server --rm -it -p 4000:88 -v $(pwd)/kerby-data:/kdc/kerby-data coolbeevip/kdc-server:2.0.3
 ```
 
 ## Creates a principal
