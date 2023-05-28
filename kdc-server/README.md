@@ -18,7 +18,7 @@ docker run --name kdc-server --rm -it -p 4000:88 -v $(pwd)/kerby-data:/kdc/kerby
 输入 `addprinc -pw password coolbeevip@EXAMPLE.COM` 命令增加一个 principal，使用 `ktadd -k /kerby-data/keytabs/coolbeevip.keytab -norandkey coolbeevip` 生成对应 keytab
 
 ```shell
-$ bin/kadmin.sh /kerby-data/conf/ -k /kerby-data/keytabs/admin.keytab
+$ bin/kadmin.sh /kdc/kerby-data/conf/ -k /kdc/kerby-data/keytabs/admin.keytab
 Debug is  true storeKey true useTicketCache false useKeyTab true doNotPrompt true ticketCache is null isInitiator true KeyTab is /kerby-data/keytabs/admin.keytab refreshKrb5Config is true principal is kadmin/EXAMPLE.COM@EXAMPLE.COM tryFirstPass is false useFirstPass is false storePass is false clearPass is false
 Refreshing Kerberos configuration
 principal is kadmin/EXAMPLE.COM@EXAMPLE.COM
@@ -27,8 +27,8 @@ Commit Succeeded
 
 KadminTool.local: addprinc -pw password coolbeevip@EXAMPLE.COM
 Principal "coolbeevip@EXAMPLE.COM" created.
-KadminTool.local: ktadd -k /kerby-data/keytabs/coolbeevip.keytab -norandkey coolbeevip
-Export Keytab to /kerby-data/keytabs/coolbeevip.keytab
+KadminTool.local: ktadd -k /kdc/kerby-data/keytabs/coolbeevip.keytab -norandkey coolbeevip
+Export Keytab to /kdc/kerby-data/keytabs/coolbeevip.keytab
 ```
 
 ## Test principal
@@ -36,8 +36,8 @@ Export Keytab to /kerby-data/keytabs/coolbeevip.keytab
 使用 `kinit` 命令我为 coolbeevip 生成一个 ticket
 
 ```shell
-$ export KRB5_CONFIG=/kerby-data/conf/krb5.conf
-$ kinit -kt /kerby-data/keytabs/coolbeevip.keytab coolbeevip
+$ export KRB5_CONFIG=/kdc/kerby-data/conf/krb5.conf
+$ kinit -kt /kdc/kerby-data/keytabs/coolbeevip.keytab coolbeevip
 ```
 
 使用 klist 检查 coolbeevip 的 ticket
