@@ -19,9 +19,7 @@ MAINTAINER zhanglei@apache.org
 
 COPY --from=builder /usr/local/kerby /usr/local/kerby
 
-RUN export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y -qq install krb5-user \
-  && chmod +x /usr/local/kerby/bin/*.sh \
+RUN chmod +x /usr/local/kerby/bin/*.sh \
   && mkdir -p /usr/local/kerby/runtime \
   && apt-get clean
 
