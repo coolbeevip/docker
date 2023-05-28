@@ -14,7 +14,7 @@ RUN apt-get update -y && apt-get install -y unzip \
   && cp -r /tmp/kerby-all-${KERBY_VERSION}/kerby-dist/kdc-dist/* . \
   && rm -rf /tmp/kerby-*
 
-FROM ubuntu:22.04
+FROM eclipse-temurin:8-jre-jammy
 MAINTAINER zhanglei@apache.org
 
 COPY --from=builder /usr/local/kerby /usr/local/kerby
