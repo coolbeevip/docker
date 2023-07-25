@@ -38,7 +38,7 @@ jobs:
           file: ./openjdk-8/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/openjdk:8.345-alpine
+          tags: coolbeevip/openjdk:8.372-alpine
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
