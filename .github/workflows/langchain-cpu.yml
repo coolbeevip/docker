@@ -1,4 +1,4 @@
-name: openjre-8
+name: langchain-cpu
 
 on:
   push:
