@@ -5,4 +5,4 @@ RUN python -m venv /usr/app/venv
 ENV PATH="/usr/app/venv/bin:$PATH"
 COPY requirements.txt .
 COPY install.sh .
-RUN sh install.sh
+RUN bash install.sh
