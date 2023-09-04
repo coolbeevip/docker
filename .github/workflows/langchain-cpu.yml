@@ -37,7 +37,7 @@ jobs:
           context: ./langchain/langchain-cpu
           file: ./langchain/langchain-cpu/Dockerfile
           push: true
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: coolbeevip/langchain-cpu:0.0.248
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
