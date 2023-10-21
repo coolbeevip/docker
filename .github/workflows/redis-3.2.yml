@@ -3,8 +3,8 @@ name: redis-3.2
 on:
   push:
     paths:
-      - "redis/Dockerfile"
-      - ".github/workflows/redis.yml"
+      - "redis-3.2/Dockerfile"
+      - ".github/workflows/redis-3.2.yml"
   workflow_dispatch:
   
 jobs:
