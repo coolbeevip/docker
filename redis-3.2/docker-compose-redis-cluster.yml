@@ -1,0 +1,77 @@
+version: '3.2'
+services:
+  redis-7000:
+    image: coolbeevip/redis
+    container_name: redis-7000
+    networks:
+      - nc-network
+    ports:
+      - 7000:6379
+      - 17000:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7000
+      - CLUSTER_ANNOUNCE_BUS_PORT=17000
+  redis-7001:
+    image: coolbeevip/redis
+    container_name: redis-7001
+    networks:
+      - nc-network
+    ports:
+      - 7001:6379
+      - 17001:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7001
+      - CLUSTER_ANNOUNCE_BUS_PORT=17001
+  redis-7002:
+    image: coolbeevip/redis
+    container_name: redis-7002
+    networks:
+      - nc-network
+    ports:
+      - 7002:6379
+      - 17002:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7002
+      - CLUSTER_ANNOUNCE_BUS_PORT=17002
+  redis-7003:
+    image: coolbeevip/redis
+    container_name: redis-7003
+    networks:
+      - nc-network
+    ports:
+      - 7003:6379
+      - 17003:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7003
+      - CLUSTER_ANNOUNCE_BUS_PORT=17003
+  redis-7004:
+    image: coolbeevip/redis
+    container_name: redis-7004
+    networks:
+      - nc-network
+    ports:
+      - 7004:6379
+      - 17004:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7004
+      - CLUSTER_ANNOUNCE_BUS_PORT=17004
+  redis-7005:
+    image: coolbeevip/redis
+    container_name: redis-7005
+    networks:
+      - nc-network
+    ports:
+      - 7005:6379
+      - 17005:16379
+    environment:
+      - CLUSTER_ANNOUNCE_IP=10.1.57.50
+      - CLUSTER_ANNOUNCE_PORT=7005
+      - CLUSTER_ANNOUNCE_BUS_PORT=17005
+networks:
+  nc-network:
+    external: true
