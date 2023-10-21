@@ -32,8 +32,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./redis
-          file: ./redis/Dockerfile
+          context: ./redis-3.2
+          file: ./redis-3.2/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
           tags: coolbeevip/redis:3.2
