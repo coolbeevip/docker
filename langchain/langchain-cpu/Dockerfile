@@ -1,4 +1,4 @@
-FROM python:3.9-buster as builder
+FROM python:3.11-buster as builder
 
 WORKDIR /usr/app
 RUN python -m venv /usr/app/venv
