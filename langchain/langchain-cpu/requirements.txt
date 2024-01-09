@@ -1,2 +1,2 @@
-langchain==0.0.334
-langchain-experimental==0.0.39
+langchain==0.1.0
+langchain-experimental==0.0.47
