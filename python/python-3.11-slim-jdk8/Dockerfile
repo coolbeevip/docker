@@ -1,7 +1,4 @@
 FROM python:3.11-slim
-
-RUN apt update
-RUN apt install -y apt-transport-https ca-certificates wget dirmngr gnupg software-properties-common
-RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-RUN apt update
-RUN apt install adoptopenjdk-8-hotspot
+COPY --from=openjdk:8-jre-slim /usr/local/openjdk-8 /usr/local/openjdk-8
+ENV JAVA_HOME /usr/local/openjdk-8
+RUN update-alternatives --install /usr/bin/java java /usr/local/openjdk-8/bin/java
