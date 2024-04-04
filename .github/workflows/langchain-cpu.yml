@@ -38,7 +38,7 @@ jobs:
           file: ./langchain/langchain-cpu/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/langchain-cpu:3.11-0.1.13
+          tags: coolbeevip/langchain-cpu:3.11-0.1.14
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
