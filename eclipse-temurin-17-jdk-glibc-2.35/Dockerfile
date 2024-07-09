@@ -14,10 +14,10 @@ ENV LANG='en_US.UTF-8' \
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 RUN set -x && \
-    sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-    apk update && \
-    apk add --no-cache bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp && \
-	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends bash tzdata openssh-client su-exec unzip libzmq5 fonts-dejavu-core curl passwd procps lftp && \
+    ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     mkdir -p /var/log/nc
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
