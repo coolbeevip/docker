@@ -23,7 +23,7 @@ RUN set -x && \
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
   && ln -s /usr/local/bin/docker-entrypoint.sh
 
-RUN addgroup -g ${WORKGID} -S ${WORKGROUP} && adduser -u ${WORKUID} -S ${WORKUSER} -G ${WORKGROUP} && \
+RUN addgroup --gid ${WORKGID} ${WORKGROUP} && adduser --uid ${WORKUID} --ingroup ${WORKGROUP} --system ${WORKUSER} && \
   chown -R ${WORKUSER}:${WORKGROUP} /var/log/nc
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
