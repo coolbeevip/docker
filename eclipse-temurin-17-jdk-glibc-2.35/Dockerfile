@@ -18,12 +18,6 @@ RUN set -x && \
     apk update && \
     apk add --no-cache bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp && \
 	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
-    wget -t 0 -c -T 36000 https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r0/glibc-2.35-r0.apk && \
-    apk add --force-overwrite glibc-2.35-r0.apk && \
-    rm -rf /var/cache/apk/* && \
-    rm /etc/apk/keys/sgerrand.rsa.pub && \
-    rm glibc-2.35-r0.apk && \
     mkdir -p /var/log/nc
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
