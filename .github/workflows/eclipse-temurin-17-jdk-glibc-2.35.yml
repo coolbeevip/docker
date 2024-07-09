@@ -38,7 +38,7 @@ jobs:
           file: ./eclipse-temurin-17-jdk-glibc-2.35/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/eclipse-temurin:17.0.11_9-jdk-alpine-glibc-2.35
+          tags: coolbeevip/eclipse-temurin:17.0.11_9-jdk-glibc-2.35
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest

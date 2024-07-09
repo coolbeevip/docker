@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.11_9-jdk-alpine
+FROM eclipse-temurin:17.0.11_9-jdk
 
 MAINTAINER zhanglei@apache.org
 
