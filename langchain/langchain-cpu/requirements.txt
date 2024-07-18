@@ -1,5 +1,12 @@
-langchain==0.2.7
+langchain==0.2.9
 langchain-experimental==0.0.62
-langchain-openai==0.1.15
+langchain-openai==0.1.17
 langchain-huggingface==0.0.3
 langgraph==0.1.8
+opentelemetry-distro[otlp]==0.46b0
+opentelemetry-instrumentation==0.46b0
+opentelemetry-instrumentation-aiohttp-client==0.46b0
+opentelemetry-instrumentation-asyncio==0.46b0
+opentelemetry-instrumentation-fastapi==0.46b0
+opentelemetry-instrumentation-logging==0.46b0
+opentelemetry-instrumentation-requests==0.46b0
