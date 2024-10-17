@@ -1,8 +1,8 @@
-langchain==0.2.16
-langchain-experimental==0.0.65
-langchain-openai==0.1.23
-langchain-huggingface==0.0.3
-langgraph==0.2.19
+langchain==0.3.3
+langchain-experimental==0.3.2
+langchain-openai==0.2.2
+langchain-huggingface==0.1.0
+langgraph==0.2.38
 opentelemetry-distro[otlp]==0.46b0
 opentelemetry-instrumentation==0.46b0
 opentelemetry-instrumentation-asgi==0.46b0
