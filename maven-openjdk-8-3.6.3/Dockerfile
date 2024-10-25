@@ -3,7 +3,6 @@ FROM coolbeevip/openjdk:8.372-alpine-glibc-2.35
 MAINTAINER zhanglei@apache.org
 
 ARG MAVEN_VERSION=3.6.3
-ARG USER_HOME_DIR="/root"
 ARG BASE_URL=https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries
 
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
@@ -13,4 +12,3 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /usr/share/maven
-ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
