@@ -9,7 +9,7 @@ ENV WORKGID=12000
 
 ENV LANG='en_US.UTF-8' \
     LC_ALL='en_US.UTF-8' \
-    JAVA_TOOL_OPTIONS="-Xms512m -Xmx1g -Xss1024k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m -Xnoclassgc -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=12 -XX:MaxTenuringThreshold=15 -XX:+ExplicitGCInvokesConcurrent -XX:+CMSParallelRemarkEnabled -XX:SurvivorRatio=8 -XX:CMSInitiatingOccupancyFraction=65 -XX:+UseCMSInitiatingOccupancyOnly -XX:+CMSClassUnloadingEnabled -XX:+PrintGCDetails -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1024k -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -Xloggc:/var/log/nc/gc.vgc"
+    JAVA_TOOL_OPTIONS="-Xms512m -Xmx1g -Xss1024k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m -Xnoclassgc -XX:+UseG1GC -XX:ParallelGCThreads=12 -XX:MaxTenuringThreshold=15 -XX:+ExplicitGCInvokesConcurrent -XX:SurvivorRatio=8 -XX:InitiatingHeapOccupancyPercent=65 -Xlog:gc*:file=/var/log/nc/gc.vgc:time,level,tags:filecount=10,filesize=1M"
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
