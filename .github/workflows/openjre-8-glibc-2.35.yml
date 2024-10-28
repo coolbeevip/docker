@@ -38,7 +38,7 @@ jobs:
           file: ./openjre-8-glibc-2.35/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/openjre:8.372-alpine-glibc-2.35
+          tags: coolbeevip/openjre:8-alpine-glibc-2.35
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
