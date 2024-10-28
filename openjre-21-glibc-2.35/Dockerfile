@@ -16,7 +16,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN set -x && \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk update && \
-    apk add --no-cache openjdk21-jre bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp && \
+    apk add --no-cache openjdk21-jre bash tzdata openssh openssl su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp && \
 	  cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget -t 0 -c -T 36000 https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk && \

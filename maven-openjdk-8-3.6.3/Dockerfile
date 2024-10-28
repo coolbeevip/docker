@@ -7,7 +7,7 @@ ENV MAVEN_HOME /usr/share/maven
 
 RUN set -x \
     && apk update \
-    && apk add --no-cache openjdk8 bash tzdata openssh su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp \
+    && apk add --no-cache openjdk8 bash tzdata openssh openssl su-exec unzip libzmq ttf-dejavu curl shadow jattach procps lftp \
     && wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
     && wget -t 0 -c -T 36000 https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk \
     && apk add --force-overwrite glibc-2.35-r1.apk \
