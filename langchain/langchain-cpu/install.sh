@@ -3,14 +3,14 @@
 set -e
 
 # Install Rust
-RUN apt-get update && apt-get install -y --no-install-recommends \
+apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
     cmake \
     clang \
     libclang-dev \
     llvm-dev
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install Requirements
 platform=$(uname -m)
