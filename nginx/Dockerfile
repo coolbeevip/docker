@@ -1,4 +1,4 @@
-FROM nginx:1.20.1-alpine as builder
+FROM nginx:1.27.2-alpine as builder
 
 # https://hg.nginx.org/pkg-oss/file/tip/alpine
 ARG ENABLED_MODULES="ndk njs lua set-misc opentracing subs-filter headers-more"
@@ -55,7 +55,7 @@ RUN set -ex \
     done \
     && echo "BUILT_MODULES=\"$BUILT_MODULES\"" > /tmp/packages/modules.env
 
-FROM nginx:1.20.1-alpine
+FROM nginx:1.27.2-alpine
 COPY --from=builder /tmp/packages /tmp/packages
 COPY --from=builder /modules/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /modules/default.conf /etc/nginx/conf.d/default.conf
