@@ -1,4 +1,4 @@
-FROM nginx:1.27.2-alpine as builder
+FROM nginx:1.27.1-alpine AS builder
 
 # https://hg.nginx.org/pkg-oss/file/tip/alpine
 ARG ENABLED_MODULES="ndk njs lua set-misc opentracing subs-filter headers-more"

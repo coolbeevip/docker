@@ -38,7 +38,7 @@ jobs:
           file: ./nginx/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/nginx:1.27.2-alpine,coolbeevip/nginx:latest
+          tags: coolbeevip/nginx:1.27.1-alpine,coolbeevip/nginx:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
