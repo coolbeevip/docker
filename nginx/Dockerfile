@@ -55,7 +55,7 @@ RUN set -ex \
     done \
     && echo "BUILT_MODULES=\"$BUILT_MODULES\"" > /tmp/packages/modules.env
 
-FROM nginx:1.27.2-alpine
+FROM nginx:1.27.1-alpine
 COPY --from=builder /tmp/packages /tmp/packages
 COPY --from=builder /modules/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /modules/default.conf /etc/nginx/conf.d/default.conf
