@@ -1,5 +1,5 @@
 
-FROM redis:6.2.4-alpine
+FROM redis:7.4.1-alpine
 
 MAINTAINER coolbeevip(coolbeevip@gmail.com)
 
