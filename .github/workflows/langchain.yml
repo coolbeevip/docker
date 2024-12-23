@@ -1,4 +1,4 @@
-name: langchain-cpu
+name: langchain
 
 on:
   push:
