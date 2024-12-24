@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-bullseye
+FROM openjdk:21-jdk-bookworm
 
 MAINTAINER zhanglei@apache.org
 ARG MAVEN_VERSION=3.6.3
