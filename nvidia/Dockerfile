@@ -5,17 +5,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 # 默认的时区设置
 ENV TZ=Asia/Shanghai
 
+# Install Python
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get install -y python3.11 python3.11-dev python3-pip && \
-    rm -rf /var/lib/apt/lists/*
-
-# 设置默认python3版本
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
-RUN update-alternatives --config python3
-
-# 设置默认python版本
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 2
-RUN update-alternatives --config python
+    rm -rf /var/lib/apt/lists/* && \
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1 && \
+    update-alternatives --config python3 && \
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.11 2 && \
+    update-alternatives --config python

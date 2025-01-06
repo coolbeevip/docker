@@ -38,7 +38,7 @@ jobs:
           file: ./langchain/langchain/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/langchain-nvidia:3.11-0.3.13-12.2.0
+          tags: coolbeevip/langchain-nvidia:12.2.0-3.11-0.3.13
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
