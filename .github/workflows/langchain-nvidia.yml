@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "langchain/langchain-nvidia/**"
-      - ".github/workflow/langchain-nvidia.yml"
+      - ".github/workflows/langchain-nvidia.yml"
   workflow_dispatch:
 
 jobs:
