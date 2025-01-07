@@ -13,7 +13,5 @@ apt-get update && apt-get install -y --no-install-recommends \
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install Requirements
-platform=$(uname -m)
-echo "platform: $platform"
 pip install --upgrade pip
 pip install -r requirements.txt

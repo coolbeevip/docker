@@ -1,10 +1,10 @@
-name: langchain
+name: langchain-nvidia
 
 on:
   push:
     paths:
-      - "langchain/langchain/**"
-      - ".github/workflows/langchain.yml"
+      - "langchain/langchain-nvidia/**"
+      - ".github/workflow/langchain-nvidia.yml"
   workflow_dispatch:
 
 jobs:
@@ -34,8 +34,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./langchain/langchain
-          file: ./langchain/langchain/Dockerfile
+          context: ./langchain/langchain-nvidia
+          file: ./langchain/langchain-nvidia/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
           tags: coolbeevip/langchain-nvidia:12.2.0-3.11-0.3.13
