@@ -26,7 +26,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 # 安装目标库
 RUN rustup target add aarch64-unknown-linux-musl
-RUN rustup target x86_64-unknown-linux-musl
+RUN rustup target add x86_64-unknown-linux-musl
 
 ## 可选：安装特定版本的 Rust
 #RUN rustup install stable
