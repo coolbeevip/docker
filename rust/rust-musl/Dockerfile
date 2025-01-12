@@ -20,11 +20,14 @@ RUN ln -s /usr/bin/g++ /usr/bin/musl-g++
 
 # 安装 Rust 和 Cargo
 RUN curl -proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
-RUN rustup target add aarch64-unknown-linux-musl
-RUN rustup target x86_64-unknown-linux-musl
 
 # 设置环境变量
 ENV PATH="/root/.cargo/bin:${PATH}"
+
+# 安装目标库
+RUN rustup target add aarch64-unknown-linux-musl
+RUN rustup target x86_64-unknown-linux-musl
+
 ## 可选：安装特定版本的 Rust
 #RUN rustup install stable
 ## 可选：设置默认的 Rust 版本
