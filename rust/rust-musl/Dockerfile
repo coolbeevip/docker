@@ -22,8 +22,7 @@ RUN ln -s /usr/bin/g++ /usr/bin/musl-g++
 RUN curl -proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 # 设置环境变量
 ENV PATH="/root/.cargo/bin:${PATH}"
-# 可选：安装特定版本的 Rust
-RUN rustup install stable
-# 可选：设置默认的 Rust 版本
-RUN rustup default stable
-RUN echo '. "$HOME/.cargo/env"' | sudo tee -a /etc/profile
+## 可选：安装特定版本的 Rust
+#RUN rustup install stable
+## 可选：设置默认的 Rust 版本
+#RUN rustup default stable
