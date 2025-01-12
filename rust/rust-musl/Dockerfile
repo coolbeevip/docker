@@ -12,8 +12,7 @@ RUN wget https://musl.libc.org/releases/musl-1.2.5.tar.gz && \
     cd musl-1.2.5 && \
     ./configure --prefix=/usr/local/musl && \
     make && \
-    make install && \
-    rm -rf musl-1.2.5 musl-1.2.5.tar.gz
+    make install
 
 # 创建 musl-g++
 RUN ln -s /usr/bin/g++ /usr/bin/musl-g++
@@ -32,3 +31,5 @@ RUN rustup target add x86_64-unknown-linux-musl
 #RUN rustup install stable
 ## 可选：设置默认的 Rust 版本
 #RUN rustup default stable
+
+RUN rm -rf musl-1.2.5 musl-1.2.5.tar.gz

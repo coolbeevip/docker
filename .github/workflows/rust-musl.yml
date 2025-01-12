@@ -1,4 +1,4 @@
-name: langchain-cpu
+name: rust-musl
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
           file: ./rust/rust-musl/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/rust-musl:1.2.5
+          tags: coolbeevip/rust-musl:1.84.0-1.2.5
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
