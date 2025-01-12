@@ -26,3 +26,4 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN rustup install stable
 # 可选：设置默认的 Rust 版本
 RUN rustup default stable
+RUN echo '. "$HOME/.cargo/env"' | sudo tee -a /etc/profile
