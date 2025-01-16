@@ -31,6 +31,7 @@ ENV \
   # Cache is useless in docker image, so disable to reduce image size
   PIP_NO_CACHE_DIR=1
 
+RUN apt-get install git
 RUN git clone https://github.com/coolbeevip/zenml.git
 
 WORKDIR /zenml
