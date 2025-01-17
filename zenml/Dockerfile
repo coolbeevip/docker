@@ -72,7 +72,7 @@ RUN pip install --upgrade pip \
 RUN pip install --no-deps --no-cache .[server,secrets-aws,secrets-gcp,secrets-azure,secrets-hashicorp,s3fs,gcsfs,adlfs,connectors-aws,connectors-gcp,connectors-azure,azureml,sagemaker,vertex]
 
 RUN curl -Lo dashboard.tar.gz https://github.com/zenml-io/zenml-dashboard/releases/download/v0.29.1/zenml-dashboard.tar.gz
-RUN tar -zxvf dashboard.tar.gz
+RUN tar -zxvf dashboard.tar.gz -C dashboard
 RUN mv dashboard /opt/venv/lib/python3.11/site-packages/zenml/zen_server/
 
 # Inherit from the base image which has the minimal set of updated system
