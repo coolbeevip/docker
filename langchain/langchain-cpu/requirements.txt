@@ -1,10 +1,10 @@
-langchain==1.0.1
-langchain-community==0.4
-langchain-openai==1.0.1
-langchain-huggingface==1.0.0
-langchain-deepseek==1.0.0
-langchain-mcp-adapters==0.1.11
-langgraph==1.0.1
+langchain==1.0.8
+langchain-community==0.4.1
+langchain-openai==1.0.3
+langchain-huggingface==1.0.1
+langchain-deepseek==1.0.1
+langchain-mcp-adapters==0.1.13
+langgraph==1.0.3
 opentelemetry-distro[otlp]==0.56b0
 opentelemetry-instrumentation==0.56b0
 opentelemetry-instrumentation-asgi==0.56b0
