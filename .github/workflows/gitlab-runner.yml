@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "gitlab-runner/**"
-      - "gitlab-runner.yml"
+      - ".github/workflows/gitlab-runner.yml"
   workflow_dispatch:
 
 jobs:
@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
@@ -26,16 +26,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v3
       - name: Build and Push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
-          context: ./python/gitlab-runner
-          file: ./python/gitlab-runner/Dockerfile
+          context: ./gitlab-runner
+          file: ./gitlab-runner/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
           tags: coolbeevip/gitlab-runner
