@@ -38,7 +38,7 @@ jobs:
           file: ./gitlab-runner/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/gitlab-runner
+          tags: coolbeevip/gitlab-runner:1.0.0,coolbeevip/gitlab-runner
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
