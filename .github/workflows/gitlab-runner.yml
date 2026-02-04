@@ -1,10 +1,10 @@
-name: python-3.11-slim-msdocs
+name: gitlab-runner
 
 on:
   push:
     paths:
-      - "python/python-3.11-slim-msdocs/**"
-      - ".github/workflows/python-3.11-slim-msdocs.yml"
+      - "gitlab-runner/**"
+      - "gitlab-runner.yml"
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Cache Docker Layers
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
@@ -34,11 +34,11 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./python/python-3.11-slim-msdocs
-          file: ./python/python-3.11-slim-msdocs/Dockerfile
+          context: ./python/gitlab-runner
+          file: ./python/gitlab-runner/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: coolbeevip/python:3.11-slim-msdocs
+          tags: coolbeevip/gitlab-runner
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image Digest
