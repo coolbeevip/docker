@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 LABEL maintainer="zhanglei@apache.org"
 
@@ -31,7 +31,7 @@ RUN apt-get update \
     && python_version="$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" \
     && dpkg --compare-versions "${node_version}" ge "20.20.0" \
     && dpkg --compare-versions "${npm_version}" ge "10" \
-    && dpkg --compare-versions "${python_version}" ge "3.11" \
+    && dpkg --compare-versions "${python_version}" ge "3.12" \
     && git --version \
     && node --version \
     && npm --version \
